@@ -1,7 +1,8 @@
 name: Automate version bumps
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '0/15 * * * *'
+    - cron: '*/15 * * * *'
 
 jobs:
   renovate:
