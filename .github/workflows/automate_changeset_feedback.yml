@@ -17,13 +17,13 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: fetch base
-        run: git fetch origin ${{ github.base_ref }}
+        run: git fetch origin ${{ github.base_sha }}
 
       - name: Generate Feedback
         id: generate-feedback
         run: |
           wget -O generate.js https://raw.githubusercontent.com/Rugvip/backstage-renovate-poc/master/scripts/generate-changeset-feedback.js 1>&2
-          node generate.js origin/${{ github.base_ref }} > feedback.txt
+          node generate.js FETCH_HEAD > feedback.txt
 
       - name: Post Feedback
         uses: actions/github-script@v5
