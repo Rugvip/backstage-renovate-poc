@@ -44,7 +44,7 @@ function makeCreateEnv(config: Config) {
     tokenManager,
   });
 
-  root.info(`Created UrlReader ${reader}`);
+  root.info(`Created borked UrlReader ${reader}`);
 
   return (plugin: string): PluginEnvironment => {
     const logger = root.child({ type: 'plugin', plugin });
