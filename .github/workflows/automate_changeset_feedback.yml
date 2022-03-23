@@ -1,13 +1,19 @@
 name: Automate Changeset Feedback
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
+  pull_request_target:
 
 permissions:
-  issues: write
   pull-requests: write
+  actions: none
+  checks: none
+  contents: none
+  deployments: none
+  issues: none
+  packages: none
+  pages: none
+  repository-projects: none
+  security-events: none
+  statuses: none
 
 jobs:
   feedback:
